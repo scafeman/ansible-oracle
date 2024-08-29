@@ -280,7 +280,8 @@ dbenvdir: "{{ oracle_user_home }}/dbenv"
 #     edition: EE
 # @end
 
-19300_base: # 19c without patching - you should never use this in production!
+db_homes_config:
+  19300_base:
      home: db1_base
      version: 19.3.0.0
      edition: EE
