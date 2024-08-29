@@ -1,13 +1,10 @@
 ---
-# Some variable have been renamed from upper to lowercase
-# The assert is checking for old - not supported - variables
-# in inventory to prevent unexpected behavior during installations.
 vars:
   db_homes_installed:
     - home: db19-si-ee
       apply_patches: true
       state: present
-      
+
 - name: Check for desupported inventory variables
   ansible.builtin.assert:
     fail_msg: Please rename the variable to lowercase in Inventory
