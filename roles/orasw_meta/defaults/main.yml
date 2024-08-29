@@ -5,7 +5,7 @@
 #
 # `nfs_server_sw` and `nfs_server_sw_path` are needed, when `install_from_nfs: true`
 # @end
-install_from_nfs: false
+install_from_nfs: true
 
 # @var nfs_server_sw:description: >
 # Defines the NFS-Server used to mount the installation media from.
@@ -13,6 +13,8 @@ install_from_nfs: false
 # @var nfs_server_sw:example: >
 # nfs_server_sw: nfs-server.example.com
 # @end
+
+nfs_server_sw: 10.0.3.11
 
 # @var apply_patches_db:description: >
 # Apply Patches from db_homes_config for installed ORACLE_HOME?
@@ -39,6 +41,8 @@ _www_download_bin: curl
 # @var nfs_server_sw_path:example: >
 # nfs_server_sw_path: /orasw
 # @end
+
+nfs_server_sw_path: /srv/orasw
 
 # @todo bug: why do we need oracle_stage_remote?
 # @var oracle_stage_remote:description: >
