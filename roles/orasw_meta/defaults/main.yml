@@ -291,6 +291,11 @@ dbenvdir: "{{ oracle_user_home }}/dbenv"
 #     state: present
 # @end
 
+db_homes_installed:
+   - home: 19300-base
+     apply_patches: true
+     state: present
+
 # @var oracle_sw_patches:description: >
 # Defines the list of known Patches in `ansible-oracle`.
 #
