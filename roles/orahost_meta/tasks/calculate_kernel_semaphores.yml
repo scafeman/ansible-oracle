@@ -40,6 +40,10 @@
   set_fact:
     __orahost_kernel_semmsl: "{{ __orahost_kernel_semmsl | default(250) }}"
 
+- name: Set default for __orahost_kernel_semmns
+  set_fact:
+    __orahost_kernel_semmns: "{{ __orahost_kernel_semmns | default(32000) }}"
+
 - name: calculate_kernel_semaphores | Increase kernel.sem, if set too low
   ansible.builtin.set_fact:
     sysctl_kernel_sem: >-
