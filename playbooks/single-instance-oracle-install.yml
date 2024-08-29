@@ -2,15 +2,14 @@
 - name: Host configuration
   hosts: all
   user: ansible
-  sudo: yes
+  become: true
   roles:
     - common
     - orahost
 - name: Oracle Database server installation & Database Creation 
   hosts: all
   user: ansible
-  sudo: yes 
-  sudo_user: oracle 
+  become: true 
   roles: 
     - oraswdb_install 
     - oradb_manage_db
