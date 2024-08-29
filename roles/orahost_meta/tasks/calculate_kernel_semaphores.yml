@@ -27,14 +27,18 @@
   set_fact:
     oracle_databases_processes_max: "{{ oracle_databases_processes_max | default(2048) }}"
 
-- name: calculate_kernel_semaphores | Calculate semaphore value based semaphore values
+#- name: calculate_kernel_semaphores | Calculate semaphore value based semaphore values
   # SEMOPM: min(SEMMSL,1000)
   # SEMMNI: SEMMNS/SEMMSL rounded up to the nearest multiple of 1024
-  ansible.builtin.set_fact:
-    __orahost_kernel_semopm: |
-      {{ [__orahost_kernel_semmsl | int, 1000] | min }}
-    __orahost_kernel_semmni: |
-      {{ ((__orahost_kernel_semmns | int / __orahost_kernel_semmsl | int / 1024) | round(0, 'ceil') * 1024) | int }}
+#  ansible.builtin.set_fact:
+#    __orahost_kernel_semopm: |
+#      {{ [__orahost_kernel_semmsl | int, 1000] | min }}
+#    __orahost_kernel_semmni: |
+#      {{ ((__orahost_kernel_semmns | int / __orahost_kernel_semmsl | int / 1024) | round(0, 'ceil') * 1024) | int }}
+
+- name: calculate_kernel_semaphores | Calculate semaphore value based semaphore values
+  set_fact:
+    __orahost_kernel_semmsl: "{{ __orahost_kernel_semmsl | default(250) }}"
 
 - name: calculate_kernel_semaphores | Increase kernel.sem, if set too low
   ansible.builtin.set_fact:
