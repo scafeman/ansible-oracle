@@ -13,7 +13,6 @@ install_from_nfs: true
 # @var nfs_server_sw:example: >
 # nfs_server_sw: nfs-server.example.com
 # @end
-
 nfs_server_sw: 10.0.3.11
 
 # @var apply_patches_db:description: >
@@ -41,7 +40,6 @@ _www_download_bin: curl
 # @var nfs_server_sw_path:example: >
 # nfs_server_sw_path: /orasw
 # @end
-
 nfs_server_sw_path: /srv/orasw
 
 # @todo bug: why do we need oracle_stage_remote?
@@ -52,7 +50,7 @@ oracle_stage_remote: "{{ oracle_stage }}"
 # @todo bug: is_sw_source_local really needed with default or as dependency from other vars?
 # @var is_sw_source_local:description: >
 # @end
-is_sw_source_local: true
+is_sw_source_local: false
 
 # @var oracle_base:description: >
 # `ORACLE_BASE` for Oracle RDBMS
