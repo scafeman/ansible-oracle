@@ -285,6 +285,7 @@ db_homes_config:
      home: db1_base
      version: 19.3.0.0
      edition: EE
+     oracle_home: "/u01/app/oracle/product/19.3.0/db_home"
 
 # @todo information: db_homes_installed not used for a long time...
 # @var db_homes_installed:description: >
